@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
+import HeroSlider from '../components/HeroSlider' // adjust path as needed
+import TextImageSplit from '@/components/SplitScreen'
+import AboutComponent from '@/components/About'
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -19,11 +22,11 @@ export default function Home() {
       </Head>
 
       {/* Navigation */}
-      <nav className="bg-stone-100 fixed w-full z-50 top-0 shadow-sm">
+      <nav className="bg-stone-900 fixed w-full z-50 top-0 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <Link href="/" className="text-stone-800 font-bold text-xl">
+              <Link href="/" className="text-stone-100 font-bold text-xl">
                 셀프레벨링의 모든 것
               </Link>
             </div>
@@ -31,22 +34,22 @@ export default function Home() {
             {/* Desktop Menu */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                <Link href="/" className="text-stone-800 hover:text-amber-700 px-3 py-2 text-sm font-medium transition-colors">
+                <Link href="/" className="text-stone-800 hover:text-stone-700 px-3 py-2 text-sm font-medium transition-colors">
                   홈
                 </Link>
-                <Link href="/about" className="text-stone-600 hover:text-amber-700 px-3 py-2 text-sm font-medium transition-colors">
+                <Link href="/about" className="text-stone-300 hover:text-stone-100 px-3 py-2 text-sm font-medium transition-colors">
                   소개
                 </Link>
-                <Link href="/portfolio" className="text-stone-600 hover:text-amber-700 px-3 py-2 text-sm font-medium transition-colors">
+                <Link href="/portfolio" className="text-stone-300 hover:text-stone-100 px-3 py-2 text-sm font-medium transition-colors">
                   시공사례
                 </Link>
-                <Link href="/contact" className="text-stone-600 hover:text-amber-700 px-3 py-2 text-sm font-medium transition-colors">
+                <Link href="/contact" className="text-stone-300 hover:text-stone-100 px-3 py-2 text-sm font-medium transition-colors">
                   상담문의
                 </Link>
-                <Link href="/calculator" className="text-stone-600 hover:text-amber-700 px-3 py-2 text-sm font-medium transition-colors">
+                <Link href="/calculator" className="text-stone-300 hover:text-stone-100 px-3 py-2 text-sm font-medium transition-colors">
                   모의계산기
                 </Link>
-                <Link href="/blog" className="text-stone-600 hover:text-amber-700 px-3 py-2 text-sm font-medium transition-colors">
+                <Link href="/blog" className="text-stone-300 hover:text-stone-100 px-3 py-2 text-sm font-medium transition-colors">
                   블로그
                 </Link>
               </div>
@@ -95,78 +98,9 @@ export default function Home() {
       </nav>
 
       <main>
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-amber-50 to-stone-100 overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-stone-200/30 mix-blend-multiply" aria-hidden="true" />
-          </div>
-          <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8 mt-16">
-            <div className="text-center">
-              <h1 className="text-4xl font-extrabold tracking-tight text-stone-800 sm:text-5xl md:text-6xl">
-                <span className="block">완벽한 바닥 마감을</span>
-                <span className="block text-amber-700">셀프레벨링으로</span>
-              </h1>
-              <p className="mt-6 max-w-2xl mx-auto text-xl text-stone-700">
-                전문적인 셀프레벨링 콘크리트 시공으로 평평하고 매끄러운 바닥을 만들어드립니다. 
-                집과 상업 공간 모두에 최적화된 솔루션을 제공합니다.
-              </p>
-              <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact" className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-amber-700 hover:bg-amber-800 transition-colors shadow-lg">
-                  무료 상담 받기
-                </Link>
-                <Link href="/portfolio" className="inline-flex items-center px-8 py-3 border border-stone-400 text-base font-medium rounded-md text-stone-700 bg-white hover:bg-stone-50 transition-colors">
-                  시공사례 보기
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <HeroSlider />
 
-        {/* Introduction Section */}
-        <section className="py-16 bg-stone-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-extrabold text-stone-800 sm:text-4xl">
-                셀프레벨링 전문가와 함께하세요
-              </h2>
-              <p className="mt-4 max-w-2xl mx-auto text-xl text-stone-600">
-                수년간의 경험과 전문 기술로 최고 품질의 바닥 레벨링 서비스를 제공합니다
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="bg-white rounded-lg p-6 text-center shadow-md border border-stone-200">
-                <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-stone-800 mb-2">품질 보장</h3>
-                <p className="text-stone-600">최고급 재료와 전문 기술로 완벽한 마감을 약속드립니다</p>
-              </div>
-              
-              <div className="bg-white rounded-lg p-6 text-center shadow-md border border-stone-200">
-                <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-stone-800 mb-2">신속한 시공</h3>
-                <p className="text-stone-600">효율적인 작업 프로세스로 빠르고 정확한 시공을 진행합니다</p>
-              </div>
-              
-              <div className="bg-white rounded-lg p-6 text-center shadow-md border border-stone-200">
-                <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-stone-800 mb-2">합리적 가격</h3>
-                <p className="text-stone-600">투명한 견적과 경쟁력 있는 가격으로 최고의 가치를 제공합니다</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <TextImageSplit />
 
         {/* Recent Work Gallery */}
         <section className="py-16 bg-stone-100">
@@ -204,28 +138,30 @@ export default function Home() {
             </div>
             
             <div className="text-center mt-12">
-              <Link href="/portfolio" className="inline-flex items-center px-6 py-3 border border-amber-700 text-base font-medium rounded-md text-amber-700 bg-white hover:bg-amber-700 hover:text-white transition-colors shadow-md">
+              <Link href="/portfolio" className="inline-flex items-center px-6 py-3 border border-stone-700 text-base font-medium rounded-md text-stone-700 bg-white hover:bg-stone-700 hover:text-white transition-colors shadow-md">
                 전체 시공사례 보기
               </Link>
             </div>
           </div>
         </section>
 
+
+        <AboutComponent />
         {/* Contact CTA */}
-        <section className="py-16 bg-amber-700">
+        <section className="py-16 bg-stone-600">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
               지금 바로 상담 받으세요
             </h2>
-            <p className="mt-4 text-xl text-amber-100 max-w-2xl mx-auto">
+            <p className="mt-4 text-xl text-stone-100 max-w-2xl mx-auto">
               전문가와 함께 여러분의 공간에 맞는 최적의 셀프레벨링 솔루션을 찾아보세요. 
               무료 상담과 견적을 제공해드립니다.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="inline-flex items-center px-8 py-3 border-2 border-white text-base font-medium rounded-md text-white bg-transparent hover:bg-white hover:text-amber-700 transition-colors shadow-lg">
+              <Link href="/contact" className="inline-flex items-center px-8 py-3 border-2 border-white text-base font-medium rounded-md text-white bg-transparent hover:bg-white hover:text-stone-700 transition-colors shadow-lg">
                 상담 문의하기
               </Link>
-              <Link href="/calculator" className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-amber-700 bg-white hover:bg-stone-50 transition-colors shadow-lg">
+              <Link href="/calculator" className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-stone-700 bg-white hover:bg-stone-50 transition-colors shadow-lg">
                 비용 계산해보기
               </Link>
             </div>
@@ -259,14 +195,14 @@ export default function Home() {
               <div className="space-y-2 text-sm text-stone-300">
                 <p>전화: 010-0000-0000</p>
                 <p>이메일: info@selfleveling.com</p>
-                <p>주소: 서울시 강남구 테헤란로</p>
+                <p>주소: 분당구</p>
               </div>
             </div>
           </div>
           
           <div className="border-t border-stone-700 mt-8 pt-8 text-center">
             <p className="text-stone-400 text-sm">
-              © 2024 셀프레벨링의 모든 것. All rights reserved.
+              © 2025 셀프레벨링의 모든 것. All rights reserved.
             </p>
           </div>
         </div>
