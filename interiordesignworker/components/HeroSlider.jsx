@@ -87,7 +87,7 @@ const HeroSection = () => {
                   자세히 알아보기
                 </Link>
                 <Link 
-                  href="/portfolio" 
+                  href="/quotes" 
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-lg font-semibold rounded-md text-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-stone-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   문의하기

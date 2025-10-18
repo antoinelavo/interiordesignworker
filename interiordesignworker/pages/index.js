@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 import HeroSlider from '../components/HeroSlider' // adjust path as needed
 import TextImageSplit from '@/components/SplitScreen'
-import AboutComponent from '@/components/About'
+import YouTubeChannel from '../components/YouTubeChannel'
+import Header from '@/components/Header'
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -21,81 +22,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Navigation */}
-      <nav className="bg-stone-900 fixed w-full z-50 top-0 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
-              <Link href="/" className="text-stone-100 font-bold text-xl">
-                셀프레벨링의 모든 것
-              </Link>
-            </div>
-            
-            {/* Desktop Menu */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <Link href="/" className="text-stone-800 hover:text-stone-700 px-3 py-2 text-sm font-medium transition-colors">
-                  홈
-                </Link>
-                <Link href="/about" className="text-stone-300 hover:text-stone-100 px-3 py-2 text-sm font-medium transition-colors">
-                  소개
-                </Link>
-                <Link href="/portfolio" className="text-stone-300 hover:text-stone-100 px-3 py-2 text-sm font-medium transition-colors">
-                  시공사례
-                </Link>
-                <Link href="/contact" className="text-stone-300 hover:text-stone-100 px-3 py-2 text-sm font-medium transition-colors">
-                  상담문의
-                </Link>
-                <Link href="/calculator" className="text-stone-300 hover:text-stone-100 px-3 py-2 text-sm font-medium transition-colors">
-                  모의계산기
-                </Link>
-                <Link href="/blog" className="text-stone-300 hover:text-stone-100 px-3 py-2 text-sm font-medium transition-colors">
-                  블로그
-                </Link>
-              </div>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={toggleMenu}
-                className="inline-flex items-center justify-center p-2 rounded-md text-stone-600 hover:text-stone-800 hover:bg-stone-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-600"
-              >
-                <svg className={`${isMenuOpen ? 'hidden' : 'block'} h-6 w-6`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                <svg className={`${isMenuOpen ? 'block' : 'hidden'} h-6 w-6`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-stone-50">
-            <Link href="/" className="text-stone-800 block px-3 py-2 text-base font-medium">
-              홈
-            </Link>
-            <Link href="/about" className="text-stone-600 hover:text-stone-800 block px-3 py-2 text-base font-medium">
-              소개
-            </Link>
-            <Link href="/portfolio" className="text-stone-600 hover:text-stone-800 block px-3 py-2 text-base font-medium">
-              시공사례
-            </Link>
-            <Link href="/contact" className="text-stone-600 hover:text-stone-800 block px-3 py-2 text-base font-medium">
-              상담문의
-            </Link>
-            <Link href="/calculator" className="text-stone-600 hover:text-stone-800 block px-3 py-2 text-base font-medium">
-              모의계산기
-            </Link>
-            <Link href="/blog" className="text-stone-600 hover:text-stone-800 block px-3 py-2 text-base font-medium">
-              블로그
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Header/>
 
       <main>
         <HeroSlider />
@@ -145,8 +72,13 @@ export default function Home() {
           </div>
         </section>
 
+          <YouTubeChannel 
+    channelUrl="https://www.youtube.com/channel/UCcQTRi69dsVYHN3exePtZ1A"
+    maxResults={6}
+    title="최신 영상"
+    description="우리의 시공 과정과 노하우를 영상으로 확인해보세요"
+  />
 
-        <AboutComponent />
         {/* Contact CTA */}
         <section className="py-16 bg-stone-600">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -160,9 +92,6 @@ export default function Home() {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="inline-flex items-center px-8 py-3 border-2 border-white text-base font-medium rounded-md text-white bg-transparent hover:bg-white hover:text-stone-700 transition-colors shadow-lg">
                 상담 문의하기
-              </Link>
-              <Link href="/calculator" className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-stone-700 bg-white hover:bg-stone-50 transition-colors shadow-lg">
-                비용 계산해보기
               </Link>
             </div>
           </div>
