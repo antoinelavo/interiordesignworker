@@ -81,10 +81,10 @@ const HeroSection = () => {
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
-                  href="/contact" 
+                  href="/portfolio" 
                   className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-semibold rounded-md text-white bg-stone-800 hover:bg-stone-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  자세히 알아보기
+                  시공 사례 보기
                 </Link>
                 <Link 
                   href="/quotes" 

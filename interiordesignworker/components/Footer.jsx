@@ -5,7 +5,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-white font-bold text-lg mb-4">셀프레벨링의 모든 것</h3>
+            <a href="/portfolio" className="text-stone-300 text-sm hover:text-amber-400 transition-colors">시공 서비스로</a>
+            
+
             <p className="text-stone-300 text-sm">
+              <br></br>
               전문적인 셀프레벨링 콘크리트 시공 서비스로 완벽한 바닥 마감을 제공합니다.
             </p>
           </div>
@@ -21,9 +25,9 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">연락처</h3>
             <div className="space-y-2 text-sm text-stone-300">
-              <p>전화: 010-0000-0000</p>
-              <p>이메일: info@selfleveling.com</p>
-              <p>주소: 분당구</p>
+              <p>전화: 010-4372-9390</p>
+              <p>이메일: allselfleveling@gmail.com</p>
+              <p>주소: 경기도 광주시 오포읍 능평로 46-43</p>
             </div>
           </div>
         </div>

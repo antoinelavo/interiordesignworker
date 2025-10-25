@@ -114,6 +114,9 @@ if (result.success) {
             <p className="mt-4 text-xl text-stone-200">
               상세한 정보를 작성해주시면 더욱 정밀한 견적을 제공해드립니다
             </p>
+            <p className="mt-4 text-xl text-stone-200">
+              010-4372-9390으로 문자 남겨주시면 바로 연락드리겠습니다.
+            </p>
             <div className="mt-6 flex justify-center gap-4">
               <Link href="/quotes/view" className="inline-flex items-center text-stone-200 hover:text-white transition-colors">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

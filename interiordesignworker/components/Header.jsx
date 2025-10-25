@@ -12,6 +12,8 @@ export default function Header({ currentPage = 'home' }) {
     { href: '/about', label: '소개', key: 'about' },
     { href: '/quotes', label: '견적문의', key: 'quotes' },
     { href: '/portfolio', label: '시공사례', key: 'portfolio' },
+    { href: '/youtube', label: '유튜브', key: 'youtube' },
+
   ]
 
   return (
