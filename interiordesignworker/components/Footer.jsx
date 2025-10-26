@@ -5,7 +5,6 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-white font-bold text-lg mb-4">셀프레벨링의 모든 것</h3>
-            <a href="/portfolio" className="text-stone-300 text-sm hover:text-amber-400 transition-colors">시공 서비스로</a>
             
 
             <p className="text-stone-300 text-sm">
