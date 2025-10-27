@@ -93,14 +93,14 @@ export default function Portfolio() {
 
         {/* Projects Grid */}
         <section className="py-12 bg-stone-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {filteredProjects.length === 0 ? (
-              <div className="text-center py-20">
-                <p className="text-stone-500 text-lg">해당 카테고리의 시공사례가 없습니다.</p>
-              </div>
-            ) : (
-              <div className="space-y-16">
-                {filteredProjects.map((project) => (
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  {filteredProjects.length === 0 ? (
+    <div className="text-center py-20">
+      <p className="text-stone-500 text-lg">해당 카테고리의 시공사례가 없습니다.</p>
+    </div>
+  ) : (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {filteredProjects.map((project) => (
                   <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer"
                     onClick={() => openModal(project, 0)}
 >
@@ -113,9 +113,9 @@ export default function Portfolio() {
                       <h2 className="text-3xl font-bold text-stone-800 mb-4">
                         {project.title}
                       </h2>
-                      <p className="text-lg text-stone-600 mb-6">
+                      {/* <p className="text-lg text-stone-600 mb-6 h-[3.5em]">
                         {project.description}
-                      </p>
+                      </p> */}
                       
                       {/* Image Grid */}
 <div
@@ -124,7 +124,7 @@ export default function Portfolio() {
   <img 
     src={project.images[0]} 
     alt={`${project.title} - 이미지`}
-    className="absolute inset-0 w-full h-full object-cover z-10"
+    className="absolute inset-0 w-full h-full object-cover z-10" loading="lazy"
   />
   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center z-0">
     <svg className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

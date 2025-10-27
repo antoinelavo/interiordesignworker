@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabaseClient'
 
 const ADMIN_PASSWORD = 'admin123' // Change this to your preferred password
+export const config = { runtime: 'experimental-edge' }
+
 
 export default function Admin() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)

@@ -5,10 +5,10 @@ export const projects = [
     title: '일산 의료원',
     description: '병원 내부 복도 및 진료실 바닥 셀프레벨링 작업. 완벽한 평탄도로 의료 장비 안정성 확보.',
     images: [
-      'https://selfleveling.antoinelavo.com/1-1.jpg',
-      'https://selfleveling.antoinelavo.com/1-2.jpg',
-      'https://selfleveling.antoinelavo.com/1-3.jpg',
-      'https://selfleveling.antoinelavo.com/1-4.jpg',
+      'https://selfleveling.antoinelavo.com/1-1.jpeg',
+      'https://selfleveling.antoinelavo.com/1-2.jpeg',
+      'https://selfleveling.antoinelavo.com/1-3.jpeg',
+      'https://selfleveling.antoinelavo.com/1-4.jpeg',
     ]
   },
   {
