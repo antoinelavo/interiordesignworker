@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { projects } from './portfolioData'
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState('전체')
@@ -10,22 +11,6 @@ export default function Portfolio() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const categories = ['전체', '병원', '주거', '상업', '오피스', '학교']
-
-  // Sample project data - replace with your actual projects
-  const projects = [
-    {
-      id: 1,
-      category: '병원',
-      title: '일산 의료원',
-      description: '병원 내부 복도 및 진료실 바닥 셀프레벨링 작업. 완벽한 평탄도로 의료 장비 안정성 확보.',
-      images: [
-        '/images/portfolio/1-1.jpeg',
-        '/images/portfolio/1-2.jpeg',
-        '/images/portfolio/1-3.jpeg',
-        '/images/portfolio/1-4.jpeg',
-      ]
-    }
-  ]
 
   const filteredProjects = activeTab === '전체' 
     ? projects 
